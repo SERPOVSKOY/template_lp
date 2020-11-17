@@ -1,0 +1,21 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "indent": ["error", 4],
+        "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}]
+    },
+    "env": {
+        "browser": true
+    },
+    "settings": {
+        "import/resolver": {
+            "alias": {
+                "map": [
+                    ["Custom", "./src/custom"]
+                ],
+                "extantions": [".js", ".styl"]
+            }
+        }
+    }
+}

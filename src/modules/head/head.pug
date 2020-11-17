@@ -1,0 +1,26 @@
+include ../favicon/favicon
+
+mixin head(data)
+    -
+        var title = data.title;
+
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(content="IE=edge" http-equiv="X-UA-Compatible")
+    meta(http-equiv="msthemecompatible" content="no")
+    meta(name='format-detection', content='telephone=no')
+    meta(name="format-detection" content="address=no")
+    meta(name="HandheldFriendly" content="True")
+    meta(http-equiv="Cache-Control" content="no-cache")
+    meta(http-equiv="cleartype" content="on")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+    meta(name="application-name" content="Title")
+    meta(name="msapplication-tooltip" content="Description")
+    meta(name="author" content="Alexey Serpovskoy")
+    meta(name="description" content="Аркадий Васильев - лучший частный инвестор!")
+    meta(name="keywords" content="инвестиции, капитал, мотивация, карьерный рост, акции, вклады, прибыть, крипта, биржи")
+    meta(name='theme-color', content='#7a6352')
+    +favicon
+
+    title= title

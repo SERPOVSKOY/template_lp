@@ -1,0 +1,165 @@
+font-face(name, fileName, weight = 400)
+    @font-face
+        font-family '' + name
+        src url('~custom/fonts/' + fileName + '.woff2') format('woff2'),
+        url('~custom/fonts/' + fileName + '.woff') format('woff')
+        font-weight weight
+        font-style normal
+
+flex-width($width = auto)
+    if $width == auto
+        max-width none
+    else
+        max-width $width
+    flex-basis $width
+
+img($center = true)
+    display: block
+    max-width: 100%
+    height: auto
+    if $center
+        margin-left: auto
+        margin-right: auto
+
+va()
+    font-size 0
+    &::before
+        content ''
+        display inline-block
+        vertical-align middle
+        width 0
+        height 100%
+
+simple-link()
+    &:link, &:hover, &:active, &:visited
+        {block}
+
+hide-styling()
+    -moz-appearance none
+    -webkit-appearance none
+    &::-ms-expand
+        display none
+
+text-overflow()
+    overflow hidden
+    -ms-text-overflow ellipsis
+    text-overflow ellipsis
+    white-space nowrap
+
+placeholder()
+    &::-webkit-input-placeholder
+        {block}
+    &:-moz-placeholder
+        {block}
+    &::-moz-placeholder
+        {block}
+    &:-ms-input-placeholder
+        {block}
+
+arr($width = 10px, $height = 5px, $bg = #000, $direction = t)
+    width 0
+    height 0
+    border-style solid
+    if $direction == t
+        border-width 0 ($width / 2) $height ($width / 2)
+        border-color transparent transparent $bg transparent
+    if $direction == r
+        border-width ($height / 2) 0 ($height / 2) $width
+        border-color transparent transparent transparent $bg
+    if $direction == b
+        border-width $height ($width / 2) 0 ($width / 2)
+        border-color $bg transparent transparent transparent
+    if $direction == l
+        border-width ($height / 2) $width ($height / 2) 0
+        border-color transparent $bg transparent transparent
+    if $direction == tl
+        border-width $height $width 0 0
+        border-color $bg transparent transparent transparent
+    if $direction == tr
+        border-width 0 $width $height 0
+        border-color transparent $bg transparent transparent
+    if $direction == br
+        border-width 0 0 $height $width
+        border-color transparent transparent $bg transparent
+    if $direction == bl
+        border-width $height 0 0 $width
+        border-color transparent transparent transparent $bg
+
+push-auto()
+    margin-left auto
+    margin-right auto
+
+pseudo($display = block, $pos = absolute, $content = '')
+    content $content
+    display $display
+    position $pos
+
+autofill($background = #FFF, $color = #000)
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill
+        -webkit-text-fill-color $color
+        -webkit-box-shadow 0 0 0 1000px $background inset
+
+centerX($pos = 50%)
+    left $pos
+    transform translateX(-50%)
+
+centerY($pos = 50%)
+    top $pos
+    transform translateY(-50%)
+
+center($posX = 50%, $posY = 50%)
+    left $posX
+    top $posY
+    transform translateX(-50%) translateY(-50%)
+
+clearfix()
+    &::after
+        content: ''
+        display: table
+        clear: both
+
+inline-block($alignment = middle)
+    display inline-block
+    vertical-align $alignment
+
+hide-text($direction = right)
+    if $direction == left
+        $approximate-em-value = 16px / 1em
+        $wider-than-any-screen = -9999em
+        text-indent $wider-than-any-screen * $approximate-em-value
+        overflow hidden
+        text-align left
+    else
+        text-indent 110%
+        white-space nowrap
+        overflow hidden
+
+break-inside-avoid()
+    page-break-inside: avoid
+    break-inside: avoid
+    display: table
+
+full()
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+
+image-bg(fileName)
+    display: inline-block
+    vertical-align: middle
+    width: image-size('../images/' + fileName)[0]
+    height: image-size('../images/' + fileName)[1]
+    background: url('../images/' + fileName) 50% no-repeat
+    background-size: contain
+
+image-bg-em(fileName, fz = 16px)
+    display: inline-block
+    vertical-align: middle
+    width: unit(floor(image-size('../images/' + fileName)[0] / fz, 4), 'em')
+    height: unit(floor(image-size('../images/' + fileName)[1] / fz, 4), 'em')
+    background: url('../images/' + fileName) 50% no-repeat
+    background-size: contain

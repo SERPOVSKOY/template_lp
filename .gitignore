@@ -1,0 +1,11 @@
+.idea/
+node_modules/
+*.DS_Store
+*.sublime*
+*.log
+*.ai
+npm-debug.log*
+*.stackdump
+dist/
+**/*/spritesmith-generated
+*.zip

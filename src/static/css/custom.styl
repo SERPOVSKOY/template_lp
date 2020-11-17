@@ -1,0 +1,104 @@
+h1
+h2
+h3
+h4
+h5
+h6
+.main-h1
+.main-h2
+.main-h3
+.main-h4
+.main-h5
+.main-h6
+    line-height: 1.38
+    margin: 0 0 1em
+    font-weight: 400
+    text-align: center
+
+    &_center
+        text-align: center
+
+    &_bold
+        font-weight: 700
+
+    &:last-child
+        margin-bottom: 0
+
+
+textarea, button, select, input
+    font-family: $base-font-family
+
+*
+*::before
+*::after
+    box-sizing: border-box
+    outline none
+
+ul
+ol
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+html
+    height 100%
+
+body
+    font-family: $base-font-family
+    font-size: $base-font-size
+    font-weight: normal
+    color: $color-font
+    background: $body-bg
+    background-size: 0.3em 0.3em;
+    background-color: #fafafa;
+    min-width: 320px
+    min-height: 100%
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+p
+    margin: 0 0 1em
+
+    &:last-child
+        margin-bottom: 0
+
+    b
+        font-weight: 500
+
+a
+    &
+    &:link
+    &:visited
+    &:hover
+    &:active
+        color: #000
+
+
+.main-hidden-link
+    white-space: nowrap
+    text-decoration: none
+
+    &:link
+    &:visited
+    &:hover
+    &:active
+        color: #000
+
+.wrapper
+    position: relative
+    max-width: $wrapper-width
+    min-width: 320px
+    width: 100%
+    padding-left: $wrapper-padding
+    padding-right: $wrapper-padding
+    push-auto()
+    overflow hidden
+
+body
+    display: flex
+    flex-direction: column
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+        display: block
+
+.main-img
+    img()
